@@ -1,0 +1,444 @@
+/* start variables */
+:root{
+    --main-color: rgb(48, 238, 238);
+}
+/* end variables */
+/* start global rules */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-size: 20px;
+}
+html{
+    scroll-behavior: smooth;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/* small */
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+/* end global rules */
+/* start components */
+.image-border{
+    width: 100%;
+    height: 100%;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-heading{
+    text-align: center;
+}
+.main-heading h2{
+    text-transform: uppercase;
+    position: relative;
+    padding: 20px;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    margin-bottom: 50px;
+}
+.main-heading h2::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 200px;
+    background-color: black;
+    bottom: -30px;
+}
+.main-heading h2::after{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid;
+    bottom: -40px;
+    border-radius: 50%;
+    background-color: white;
+}
+.main-heading p{
+    width: 50%;
+    margin: 0 auto 100px;
+    line-height: 1.4;
+    color: #777;
+}
+/* end components */
+.parent{
+   position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.parent .container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 78px;
+}
+.parent .container .logo{
+    display: flex;
+}
+.parent .container .logo .title{
+    margin-left: 20px;
+}
+.parent .logo .icon i{
+    font-size: 21px;
+    color: var(--main-color);
+}
+.parent .container .links ul{
+    display: flex;
+    padding: 10px;
+}
+.parent .container .links > i{
+    display: none;
+}
+@media (max-width: 768px){
+    .parent .container .links ul{
+        display: none;
+    }
+    .parent .container .links > i{
+        display: block;
+        margin: 20px;
+    }
+}
+.parent .container .links ul li{
+    margin: 20px;
+}
+.parent .container .links ul li a{
+    color: black;
+    font-weight: bold;
+}
+.parent .container .links ul>li:nth-child(1) a,
+.parent .container .links ul li:hover a{
+    color: var(--main-color);
+}
+.parent .container::before{
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 2px;
+    background-color: black;
+    top: 100%;
+}
+.parent .links{
+    display: flex;
+}
+.parent .links .icon{
+    position: relative;
+}
+.parent .links .icon::before{
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 2px;
+    background-color: black;
+    left: -10px;
+}
+/* section */
+section{
+    position: relative;
+    background-image: url(../images/owl4.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+section .lay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(27 25 25 / 43%);
+}
+section .text{
+    position: absolute;
+    top: 50%;
+    background-color: var(--main-color);
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    border-radius: 20px;
+    padding: 10px;
+}
+@media (max-width: 460px){
+    section .text{
+        width: 100% !important;
+    }
+}
+section .text .content{
+    max-width: 500px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+section .text .content::first-line{
+    font-size: 30px;
+}
+section .back{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+}
+
+section .angles .fa-angle-left{
+    left: 30px;
+
+}
+section .angles .fa-angle-right{
+    right: 30px;
+
+}
+section ul{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+section ul li{
+    border: 2px solid;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border-radius: 50%;
+}
+section ul li:nth-child(2){
+    background-color: var(--main-color);
+}
+/* section */
+/* services */
+.services{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+@media (min-width: 770px){
+    .services .container{
+        display:grid;
+        grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+        row-gap: 100px;
+        column-gap: 50px;
+    }
+}
+.services .serv-box{
+    display: flex;
+}
+.services .serv-box i{
+    margin-right: 30px;
+    font-size: 30px;
+}
+.services .serv-box h2{
+    color: var(--main-color);
+    font-size: 30px;
+}
+.services .serv-box p{
+    line-height: 1.4;
+    color: #777;
+}
+@media (max-width: 500px){
+    .services .serv-box{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .services .serv-box i{
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .services .serv-box h2{
+        text-align: center;
+    }
+}
+.design{
+    display: flex;
+    background-image: url(../images/cover.jpg);
+    position: relative;
+    overflow: hidden;
+}
+.design::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(27 25 25 / 43%);
+}
+.design p{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30%;
+    left: 70%;
+    background-color: var(--main-color);
+    padding: 20px;
+}
+.design .image{
+    position: relative;
+    bottom: -100px;
+}
+
+@media (max-width: 500px){
+    .design p{
+        width: 100%;
+        padding: 10px;
+        left: 0;
+    }
+}
+/* product */
+.product {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.product ul{
+    display: flex;
+    margin-bottom: 20px;
+}
+.product ul li{
+    padding: 10px;
+    background-color: #777;
+    border: 2px solid #eee;
+    color: #eee;
+    white-space: nowrap;
+}
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.images > div{
+    width: calc(25% - 40px);
+    margin: 20px;
+    height: 300px;
+    position: relative;
+    transition: 0.5s;
+    overflow: hidden;
+}
+@media (max-width: 1200px){
+    .images > div{
+        width: calc(50% - 40px);
+    }
+}
+@media (max-width: 800px){
+    .images > div{
+        width: calc(100% - 40px);
+    }
+}
+.images > div .cap{
+    background-color: white;
+    position: absolute;
+    top: 150%;
+    height: 29%;
+    width: 100%;
+    transition: 0.5s;
+}
+.images > div:hover img{
+    transition: 0.5s;
+}
+.images > div:hover img{
+    transform: rotate(30deg) scale(1.1);
+}
+.images > div:hover .cap{
+    top: 75%;
+}
+
+/* product */
+/* compare */
+.box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box .title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.box .title h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+}
+.box .comp{
+    background-color: #777;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto 30px;
+}
+.box .comp-title{
+    text-align: center;
+}
+.box .content{
+    background-color: var(--main-color);
+    height: 100%;
+    position: relative;
+}
+.box .content::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: -17px;
+    left: 93%;
+    border: 13px solid;
+    border-color: black transparent transparent transparent;
+}
+.box .content::before{
+    position: absolute;
+    content: "80%";
+    top: -42px;
+    background-color: black;
+    color: white;
+    padding: 2px;
+    border-radius: 4px;
+    left: 89%;
+}
+@media(min-width: 500px){
+    .box .content::after{
+        left: 97%;
+    }
+    .box .content::before{
+        left: 92%;
+    }
+}
+ 
+/* compare */
+
