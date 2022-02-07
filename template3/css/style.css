@@ -44,7 +44,7 @@ a {
   margin: 50px auto;
   width: fit-content;
   padding: 10px 20px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: var(--main-color);
   transition: var(--main-transition-duration);
@@ -54,8 +54,8 @@ a {
 .main::after {
   content: "";
   position: absolute;
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   background-color: var(--main-color);
   top: 50%;
   transform: translateY(-50%);
@@ -78,6 +78,31 @@ a {
 .main:hover {
   transition-delay: 0.5s;
   color: white;
+}
+
+.spikes {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  top: -50px;
+  background-color: white;
+}
+.spikes::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(135deg, #eee 25%, transparent 25%);
+  background-size: 35px;
+}
+
+.spikes::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(225deg, #eee 25%, transparent 25%);
+  background-size: 35px;
 }
 /* extra Small */
 @media (min-width: 468px) {
@@ -253,6 +278,55 @@ a {
   margin: 45px;
 }
 /* end header */
+.boxn {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  background-color: #eee;
+  padding: 10px;
+  left: -200px;
+  top: 15%;
+  transition: left 2s;
+}
+
+.boxn .red {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  cursor: pointer;
+}
+
+.boxn .green {
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  cursor: pointer;
+}
+.boxn .blue {
+  width: 30px;
+  height: 30px;
+  background-color: blue;
+  cursor: pointer;
+}
+
+.boxn > div:not(.active) {
+  opacity: 0.4;
+}
+
+.theme {
+  writing-mode: vertical-rl;
+  position: absolute;
+  left: 0;
+  top: 15%;
+  background-color: var(--main-color);
+  color: wheat;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 100;
+}
+
 /* start landing section */
 .landing {
   position: relative;
@@ -589,7 +663,6 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 100px;
 }
-
 .team .container .box {
   position: relative;
   height: 400px;
@@ -618,7 +691,6 @@ a {
   right: 0;
   transition: var(--main-transition-duration);
   box-shadow: 1px 1px 10px #888;
-  
 }
 .team .container .box:hover .image {
   right: 20%;
@@ -680,7 +752,7 @@ a {
   counter-increment: count;
 }
 
-.services .container .box::before{
+.services .container .box::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -691,23 +763,23 @@ a {
   transition: var(--main-transition-duration);
 }
 
-.services .container .box:hover::before{
+.services .container .box:hover::before {
   width: 100%;
 }
 
-.services .container .box:hover{
+.services .container .box:hover {
   transform: translateY(-8px);
 }
 
-.services .container .box i{
+.services .container .box i {
   font-size: 60px;
   color: #777;
   padding: 30px;
 }
-.services .container .box h2{
+.services .container .box h2 {
   color: var(--main-color);
 }
-.services .container .box .foot{
+.services .container .box .foot {
   position: relative;
   width: 100%;
   text-align: end;
@@ -717,7 +789,7 @@ a {
   cursor: pointer;
 }
 
-.services .container .box .foot::before{
+.services .container .box .foot::before {
   position: absolute;
   content: "";
   width: 40%;
@@ -729,7 +801,7 @@ a {
   transition: var(--main-transition-duration);
   z-index: -2;
 }
-.services .container .box .foot::after{
+.services .container .box .foot::after {
   position: absolute;
   content: "0" counter(count);
   color: white;
@@ -742,21 +814,77 @@ a {
   padding: 12px 6px;
   z-index: -1;
 }
-.services .container .box:hover .foot::before{
+.services .container .box:hover .foot::before {
   width: 100%;
   transform: skewX(0);
   left: 0;
 }
-.services .container .box:hover .foot{
+.services .container .box:hover .foot {
   color: white;
 }
 
 @media (max-width: 768px) {
-  .services{
+  .services {
     padding: 20px 0;
   }
 }
 /* end sevices section */
+
+/* start process section */
+.process .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.process .container .pro-img {
+  padding: 30px;
+  width: 50%;
+}
+.process .container .pro-img img {
+  max-width: 100%;
+}
+.process .container .pro-side {
+  padding: 30px;
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .process .container .pro-img {
+    display: none;
+  }
+  .process .container .pro-side {
+    width: 100%;
+  }
+}
+.process .container .pro-side .pro {
+  margin-bottom: 10px;
+}
+.process .container .pro-side h3 {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+.process .container .pro-side h3 span {
+  font-size: 10px;
+  border: 2px solid #777;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  border-radius: 2px;
+  color: #777;
+}
+.process .container .pro-side .pro-bar {
+  height: 35px;
+  background-color: #eee;
+  margin-top: 6px;
+}
+.process .container .pro-side .pro-bar span {
+  display: block;
+  height: 100%;
+  background-color: var(--alter-color);
+}
+
+/* start process section */
 
 /* foot */
 .footer {
@@ -775,24 +903,24 @@ a {
   padding: 10px;
   margin: 2px;
 }
-.foot-icons i:hover{
+.foot-icons i:hover {
   color: black;
   background-color: white;
 }
 .last-line {
   margin: 10px;
 }
-.footer .last-line{
+.footer .last-line {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.footer .last-line a{
+.footer .last-line a {
   color: white;
   font-size: 25px;
 }
-.footer .last-line p{
+.footer .last-line p {
   display: block;
 }
 /* foot */
