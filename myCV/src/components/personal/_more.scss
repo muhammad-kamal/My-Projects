@@ -1,0 +1,43 @@
+@use "../scssMinxin" as *;
+
+.more {
+  position: relative;
+  background-size: cover;
+}
+
+.more::before {
+  @include layout;
+}
+
+.moreImg {
+  width: 50%;
+  position: absolute;
+  left: 10px;
+  max-height: 90%;
+  overflow: hidden;
+}
+
+.moreData {
+  right: -26%;
+}
+
+@media (max-width: 870px) {
+  .moreImg {
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .moreData {
+    width: 100%;
+    right: 0;
+    height: 96%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .moreData p{
+      width: 100%;
+      text-align: center;
+  }
+}

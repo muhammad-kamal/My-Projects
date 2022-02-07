@@ -1,0 +1,33 @@
+@use "../scssMinxin" as *;
+
+.navStyle {
+  position: absolute;
+  top: 10px;
+  background-color: rgba(black, 0.4);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  z-index: 200;
+  box-shadow: 5px 8px 15px;
+}
+
+.logo {
+  color: rgba(white, .6) !important;
+  font-weight: bold;
+  letter-spacing: 8px;
+  font-size: 25px;
+}
+
+.nLink{
+    padding: 2px 5px;
+    margin: 2px 4px;
+    background-color: $mainColor;
+    border-radius: 5px;
+    transition:2s;
+    border: 2px solid $vinous;
+}
+
+.nLink:hover{
+    background-color: $vinous;
+    border: 2px solid $mainColor;
+}

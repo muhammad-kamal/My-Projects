@@ -1,0 +1,151 @@
+@use "../scssMinxin" as *;
+
+.title{
+    @include mainTitle;
+}
+
+.secBackground{
+    background-color: $mainColor;
+    height: 100vh;
+}
+
+@media (max-width : 770px){
+    .secBackground{
+        height: 130vh ;
+    }
+}
+
+@media (max-width : 575px){
+    .secBackground{
+        height: 275vh ;
+    }
+}
+
+.outer{
+    @include circled;
+    box-shadow: 4px 4px 8px ;
+    margin: auto;
+}
+
+.inside{
+    @include circled;
+    width: 150px;
+    height: 150px;
+    box-shadow:inset 2px 2px 6px ;
+    background-color: $mainColor ;
+}
+
+.fitContent{
+    width: fit-content;
+    height: fit-content;
+}
+
+%progressCircle{
+    fill: none;
+    stroke: $vinous;
+    stroke-width: 14;
+    stroke-dasharray: 552;
+}
+
+#h{
+    @extend %progressCircle;
+    stroke-dashoffset: 55;
+}
+
+#c{
+    @extend %progressCircle;
+    stroke-dashoffset: 111;
+}
+
+#c{
+    @extend %progressCircle;
+    stroke-dashoffset: 111;
+}
+#js{
+    @extend %progressCircle;
+    stroke-dashoffset: 165;
+}
+#sass{
+    @extend %progressCircle;
+    stroke-dashoffset: 82;
+}
+#react{
+    @extend %progressCircle;
+    stroke-dashoffset: 165;
+}
+#bootstrap{
+    @extend %progressCircle;
+    stroke-dashoffset: 82;
+}
+
+
+@keyframes progresH{
+    0%{
+        stroke-dashoffset: 552; 
+    }
+    100%{
+        stroke-dashoffset: 55;
+    }
+}
+
+@keyframes progresC{
+    0%{
+        stroke-dashoffset: 552; 
+    }
+    100%{
+        stroke-dashoffset: 111;
+    }
+}
+
+@keyframes progresJS{
+    0%{
+        stroke-dashoffset: 552; 
+    }
+    100%{
+        stroke-dashoffset: 165;
+    }
+}
+
+@keyframes progresSS{
+    0%{
+        stroke-dashoffset: 552; 
+    }
+    100%{
+        stroke-dashoffset: 82;
+    }
+}
+
+@keyframes progresR{
+    0%{
+        stroke-dashoffset: 552; 
+    }
+    100%{
+        stroke-dashoffset: 165;
+    }
+}
+
+@keyframes progresB{
+    0%{
+        stroke-dashoffset: 552; 
+    }
+    100%{
+        stroke-dashoffset: 82;
+    }
+}
+
+@function anim($storkeOffset){
+    
+}
+
+.progressNum{
+    font-size: 25px;
+    color: $vinous;
+}
+
+.progressHover{
+    transition: 0.5s;
+}
+
+.progressHover:hover{
+    transform: translateY(-12px);
+}

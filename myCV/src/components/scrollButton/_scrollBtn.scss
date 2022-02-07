@@ -1,0 +1,50 @@
+@use "../scssMinxin" as *;
+
+.upBtn {
+  position: fixed;
+  z-index: 111;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  font-size: 22px;
+  border-radius: 50%;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  color: $mainColor;
+  background-color: $vinous;
+  transition: 1s;
+}
+
+.upBtn:hover {
+  background-color: rgba($vinous, 0.6);
+  transform: scale(1.1);
+}
+
+.upBtn::before {
+  position: absolute;
+  font-family: "Font Awesome 5 free";
+  content: "\f102";
+  color: $vinous;
+  top: -50px;
+  font-size: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0%,
+  20%,
+  40%,
+  60% {
+    top: -60px;
+  }
+  30%,
+  90% {
+    top: -50px;
+  }
+}

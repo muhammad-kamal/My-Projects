@@ -1,0 +1,14 @@
+@use "../scssMinxin" as *;
+
+.personalTitle{
+    margin-bottom: 50px !important;
+}
+
+.navI{
+    color: $vinous !important;
+}
+
+.navI.active{
+    background-color: $vinous !important;
+    color: $mainColor !important;
+}

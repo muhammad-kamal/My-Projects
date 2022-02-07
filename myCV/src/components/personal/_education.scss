@@ -1,0 +1,38 @@
+@use "../scssMinxin" as *;
+
+.personalSec{
+    width: 80vw;
+    height: 60vh;
+    color: $mainColor;
+    border: 2px solid $vinous;
+    border-radius: 10px;
+}
+
+.education{
+    position: relative;
+    background-image: url("./hamak.jpg");
+    background-size: cover;
+}
+
+.education::before{
+    @include layout;
+}
+
+.uptofront{
+    position: relative;
+    z-index: 3;
+    color: $vinous;
+    padding: 20px 50px;
+}
+
+.perT{
+    letter-spacing: -3px;
+    white-space: nowrap;
+}
+
+.uptofront::before{
+    @include layout;
+    background-color: rgba($mainColor, .5);
+    z-index: -1;
+    border-radius: 10px;
+}

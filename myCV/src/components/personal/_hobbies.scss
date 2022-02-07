@@ -1,0 +1,16 @@
+@use "../scssMinxin" as *;
+
+.hobbies{
+    position: relative;
+    background-image: url("././hobbies.jpg");
+    background-size: cover;
+}
+
+.hobbies::before{
+    @include layout;
+}
+
+.iconI{
+    color: black;
+}
+

@@ -1,0 +1,144 @@
+@use "../scssMinxin" as *;
+
+.contact{
+    height: 115vh;
+    background-color: $mainColor;
+}
+
+.keepIn{
+    width: 40%;
+    font-size: 50px;
+    text-align: center;
+    color: $vinous;
+}
+
+.contactInfo{
+    position: relative;
+    width: 60%;
+    color: white;
+}
+
+.contactIcon{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: $vinous;
+}
+
+.contactInfo::before{
+    position: absolute;
+    content: "";
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 90%;
+    background-color: $vinous;
+}
+
+@media (max-width : 1200px){
+    .contactInfo::before{
+        left: 0px;
+    }
+}
+
+.contactSend{
+    width: 40%;
+}
+
+.contactSend input,
+.contactMsg input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 4px;
+}
+
+.contactSend input:focus,
+.contactMsg input[type = "text"]:focus{
+    outline: none;
+    caret-color: $vinous;
+}
+
+.contactSend input:focus::placeholder,
+.contactMsg input[type = "text"]:focus::placeholder {
+    color: transparent;
+}
+
+.contactMsg{
+    width: 50%;
+}
+
+.contactMsg input[type = "text"]{
+    height: 50px;
+    padding-bottom: 100px;
+}
+
+.contactMsg form input:nth-child(2){
+    color: $vinous;
+    background-color: rgba($mainColor, .8);
+    border: 2px solid $vinous;
+    transition: 1s;
+}
+
+.contactMsg form input:nth-child(2):hover{
+    color:rgba($mainColor, .8) ;
+    background-color: $vinous;
+}
+
+@media (max-width : 770px){
+    .keepIn,
+    .contactInfo,
+    .contactSend,
+    .contactMsg{
+        width: 80%;
+        margin: 0 !important;
+    }
+    
+}
+
+.contactLinks{
+    width: 100%;
+}
+
+.lastI{
+    margin: 100px 20px;
+    font-size: 80px;
+    color: #f7ac17;
+    padding: 2px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid;
+    padding: 9px;
+    transition: 1.5s;
+}
+
+.lastI:hover{
+    color: $mainColor;
+    background-color: $vinous;
+}
+
+
+@media (max-width : 770px){
+    .contact{
+        height: 145vh;
+    }
+}
+
+@media (max-width : 540px){
+    .contact{
+        height: 200vh;
+    }
+}
+
+.allrights{
+    color: white;
+    font-size: 20px;
+}
+
+.allrights span{
+    color: $vinous;
+    font-size: 25px;
+    font-weight: bold;
+}
